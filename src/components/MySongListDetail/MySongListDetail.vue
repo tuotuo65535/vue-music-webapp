@@ -34,9 +34,10 @@ export default {
       }
 
       getSongList(this.songlist.dissid).then((res) => {
-        if (res.code === 0) {
+        if (res) {
           // console.log(res.cdlist[0].songlist)
-          this.songs = this._formatSongs(res.cdlist[0].songlist)
+          let resObj = JSON.parse(res.substring('jsonCallback'.length + 1, res.length - 1))
+          this.songs = this._formatSongs(resObj.cdlist[0].songlist)
         }
       })
     },

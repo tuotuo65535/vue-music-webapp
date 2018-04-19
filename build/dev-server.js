@@ -83,7 +83,7 @@ apiRoutes.get('/recommentList', function (req, res) {
     params: req.query
   })
     .then(function (response) {
-      res.json(response.data.substring('jsonCallback'.length + 1, response.data.length -1))
+      res.json(response.data)
     })
     .catch(function (error) {
       console.log(error)

@@ -57,6 +57,8 @@ export function createSingerSong(musicData) {
     img: `https://y.gtimg.cn/music/photo_new/T002R300x300M000${musicData.albummid}.jpg?max_age=2592000`,
     // url: `http://10.151.0.22:9999/dl.stream.qqmusic.qq.com/C400${musicData.songmid}.m4a?fromtag=66`(可用)
     // url: `https://thirdparty.gtimg.com/${musicData.songid}.m4a?fromtag=38`(不可用)
-    url: `http://ws.stream.qqmusic.qq.com/${musicData.songid}.m4a?fromtag=46`
+    // url: `http://ws.stream.qqmusic.qq.com/${musicData.songid}.m4a?fromtag=46`(不可用)
+    // url: `http://isure.stream.qqmusic.qq.com/C100${musicData.songid}.m4a?fromtag=32`(不可用)
+    url: `http://dl.stream.qqmusic.qq.com/C400001tZ2KF3CaYhj.m4a?vkey=76158BA8FB09B76239CC4B039DD5ACC88BBE360A784548D921B0EC915D157378DC79CC62899FD0FEDA2DC4E22CE4D745D20A0C512695B08C&guid=7670182185&uin=515071624&fromtag=66`
   })
 }

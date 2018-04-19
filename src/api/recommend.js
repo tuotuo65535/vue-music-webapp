@@ -67,7 +67,7 @@ export function getSongList(disstid) {
     params: data
   })
   .then((res) => {
-    return Promise.resolve(JSON.parse(res.data))
+    return Promise.resolve(res.data)
   })
   .catch((err) => {
     console.log(err)
