@@ -52,7 +52,7 @@ export function getList() {
  * 提供方：https://y.qq.com/n/yqq/playlist/1471714611.html#
  */
 export function getSongList(disstid) {
-  let url = 'https://c.y.qq.com/qzone/fcg-bin/fcg_ucc_getcdinfo_byids_cp.fcg'
+  let url = '/api/recommentList'
   let data = Object.assign({}, commonParams, {
     disstid,
     type: 1,
@@ -63,9 +63,13 @@ export function getSongList(disstid) {
     hostUin: 0,
     needNewCode: 0
   })
-  let opts = Object.assign({}, opts, {
-    param: 'jsonpCallback',
-    name: 'playlistinfoCallback'
+  return axios.get(url, {
+    params: data
   })
-  return jsonp(url, data, opts)
+  .then((res) => {
+    return Promise.resolve(JSON.parse(res.data))
+  })
+  .catch((err) => {
+    console.log(err)
+  })
 }
